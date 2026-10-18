@@ -449,6 +449,10 @@
     if (!reduce) setInterval(() => { imgs[i].classList.remove('is-on'); i = (i + 1) % imgs.length; imgs[i].classList.add('is-on'); }, 4200);
   });
 
+  /* Altímetro del dron */
+  const alt = $('[data-alt]');
+  if (alt && !reduce) setInterval(() => { alt.textContent = String(118 + Math.round(Math.sin(performance.now() / 1400) * 4)); }, 300);
+
   /* Código de tiempo del visor */
   const tc = $('[data-timecode]');
   if (tc && !reduce) {

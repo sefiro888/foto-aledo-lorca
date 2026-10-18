@@ -868,3 +868,73 @@ body[data-theme="light"] .header:not(.is-solid) .btn-small { --bg: var(--black);
 
 .her-logo, .footer-logo { overflow: hidden; border-radius: 50%; }
 main, .footer { overflow-x: clip; }
+
+/* ---------- Spotlight claro ---------- */
+.spot-light { background: var(--paper-2); color: var(--black); }
+.spot-light .spot-copy p:not(.pill) { color: var(--silver-2); }
+.spot-light .pill { border-color: var(--line-l); }
+.spot-light .phone figcaption { color: var(--silver-2); }
+.pill-light { border-color: var(--line-l); }
+
+/* ---------- Vídeo y dron ---------- */
+.air { background: var(--black); color: var(--paper); padding: clamp(90px, 11vw, 160px) 0 clamp(70px, 9vw, 120px); overflow: hidden; }
+.air-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.air-copy > p:not(.pill) { margin: 26px 0 34px; color: var(--silver); max-width: 46ch; font: italic 400 1.3rem/1.45 var(--serif); }
+.air-visual { position: relative; aspect-ratio: 5 / 4; border-radius: 6px; overflow: hidden; background: radial-gradient(120% 90% at 50% 40%, #1b1a17 0, #070706 70%); border: 1px solid var(--line-d); }
+.air-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; animation: drift 24s ease-in-out infinite alternate; }
+.air-contours { position: absolute; inset: -10%; width: 120%; height: 120%; fill: none; stroke: rgba(226, 163, 54, .22); stroke-width: 1; animation: airPan 30s linear infinite alternate; }
+.has-photo .air-contours { stroke: rgba(255, 255, 255, .12); }
+@keyframes airPan { from { transform: translate(-3%, -2%); } to { transform: translate(3%, 2%); } }
+.drone { position: absolute; left: 50%; top: 46%; width: 46%; transform: translate(-50%, -50%); animation: hover 4s ease-in-out infinite; filter: drop-shadow(0 30px 24px rgba(0,0,0,.6)); }
+.drone-body { fill: #e9e6df; stroke: #e9e6df; stroke-width: 5; stroke-linecap: round; }
+.drone-body rect { stroke: none; } .drone-body circle { fill: #111; stroke: var(--amber); stroke-width: 3; }
+.rotor ellipse { fill: rgba(233, 230, 223, .35); stroke: none; transform-box: fill-box; transform-origin: center; animation: rotor .18s linear infinite; }
+.rotor.r2 ellipse, .rotor.r3 ellipse { animation-direction: reverse; }
+@keyframes rotor { 0% { transform: scaleX(1); } 50% { transform: scaleX(.25); } 100% { transform: scaleX(1); } }
+@keyframes hover { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, -56%); } }
+.air-hud { position: absolute; font: 600 .74rem/1 var(--sans); letter-spacing: .08em; color: var(--paper); background: rgba(0,0,0,.45); padding: 7px 10px; border-radius: 4px; backdrop-filter: blur(4px); }
+.air-hud b { color: var(--amber); font-variant-numeric: tabular-nums; }
+.air-alt { left: 16px; top: 16px; } .air-rec { right: 16px; top: 16px; display: flex; gap: 8px; align-items: center; }
+.air-rec i { width: 8px; height: 8px; border-radius: 50%; background: #e0412e; animation: blink 1s steps(2) infinite; }
+.air-gps { left: 16px; bottom: 16px; }
+.air-visual::after { content: ""; position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; box-shadow: 0 0 0 40px rgba(255,255,255,.02), 0 0 0 90px rgba(255,255,255,.015); pointer-events: none; }
+.air-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: clamp(50px, 7vw, 90px); }
+.air-cards article { padding: 28px; border: 1px solid var(--line-d); border-radius: 6px; transition: border-color .4s, background .4s; }
+.air-cards article:hover { border-color: var(--amber); background: rgba(255,255,255,.02); }
+.air-ico { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--amber-soft); margin-bottom: 20px; }
+.air-ico svg { width: 24px; height: 24px; fill: none; stroke: var(--amber); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.air-cards h3 { font: 400 1.7rem/1.1 var(--serif); margin-bottom: 10px; }
+.air-cards p { color: var(--silver); font-size: .95rem; }
+
+/* ---------- Kits de fiesta ---------- */
+.kits { padding: clamp(90px, 11vw, 150px) 0; background: var(--paper); }
+.kit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: stretch; }
+.kit { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-l); border-radius: 8px; overflow: hidden; transition: transform .5s var(--ease), box-shadow .5s; }
+.kit:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(0,0,0,.08); }
+.kit-img { aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper-2); }
+.kit-img img { width: 100%; height: 100%; object-fit: cover; }
+.kit-body { display: flex; flex-direction: column; gap: 10px; padding: 22px; flex: 1; }
+.kit h3 { font: 400 1.9rem/1 var(--serif); }
+.kit-price { font: 300 1.1rem/1 var(--sans); color: var(--silver-2); }
+.kit-price b { font: 400 3rem/1 var(--serif); color: var(--black); }
+.kit-desc { color: var(--silver-2); font-size: .92rem; }
+.kit ul { display: grid; gap: 6px; margin: 4px 0 18px; font-size: .9rem; }
+.kit li { position: relative; padding-left: 20px; }
+.kit li::before { content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 1px; background: var(--amber); }
+.kit .btn { margin-top: auto; align-self: flex-start; }
+.kit-featured { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber); }
+.kit-featured .kit-body::before { content: "El más pedido"; align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: var(--amber); font: 700 .7rem/1.6 var(--sans); }
+.crown { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 80px); align-items: center; margin-top: clamp(60px, 8vw, 110px); }
+.crown-img .shot-frame { aspect-ratio: 795 / 670; border-radius: 8px; }
+.crown-copy > p:not(.pill):not(.kit-note) { margin: 20px 0; color: var(--silver-2); max-width: 46ch; }
+.crown-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.crown-list li { padding: 8px 14px; border: 1px solid var(--line-l); border-radius: 999px; font-size: .86rem; }
+.kit-note { margin-top: 18px; font-size: .8rem; color: var(--silver-2); }
+.kit-note a { text-decoration: underline; }
+@media (max-width: 1100px) { .kit-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 960px) {
+  .air-grid, .crown { grid-template-columns: 1fr; }
+  .air-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) { .kit-grid { grid-template-columns: 1fr; } }
+.reduce .drone, .reduce .rotor ellipse, .reduce .air-contours { animation: none !important; }

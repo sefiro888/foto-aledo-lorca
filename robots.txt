@@ -1,2 +1,15 @@
+# Vista previa de enlaces permitida; la demo no se indexa (meta noindex)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
 User-agent: *
 Disallow: /
